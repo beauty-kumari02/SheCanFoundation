@@ -1,7 +1,7 @@
 const mongoose=require("mongoose");
 const data=require("./data.js");
 
-const MONGO_URI="mongodb+srv://jh880232:WVig04ZSxhqsrXaw@user.vifow5w.mongodb.net/?retryWrites=true&w=majority&appName=User";
+const MONGO_URI="mongodb+srv://<username>:<Password>@user.vifow5w.mongodb.net/?retryWrites=true&w=majority&appName=User";
 
 main().then((res)=>{
     console.log("connected to db");
