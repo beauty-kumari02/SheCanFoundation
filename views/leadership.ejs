@@ -1,0 +1,27 @@
+<% layout('/layout/boilerPlate.ejs') %>
+<body>
+    <div class="text-center my-4">
+        <h1 class="fw-bold text-success">
+            <i class="bi bi-people-fill text-success"></i> Visionary Leadership
+        </h1>
+        <p class="lead text-muted">
+            Meet the people who guide our vision and drive success.
+        </p>
+    </div>
+    <% for(leader of leaders){ %>
+        <div class="card mb-3 mt-3 mx-auto" style="max-width: 50rem; height: 15rem;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src=<%=leader.image %> class="img-fluid" style="height: 15rem; padding: 1rem;" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=leader.name %></h5>
+                        <p class="card-text"><%=leader.description %></p>
+                        <p>Donated:<%=leader.donation %>&#8377;</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% } %>
+</body>

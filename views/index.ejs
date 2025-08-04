@@ -1,0 +1,84 @@
+ <% layout('/layout/boilerPlate.ejs') %>
+  <style>
+    body {
+      background-color: #f0e7e7;
+    }
+    .card {
+      border-radius: 1rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    .form-control:focus {
+      box-shadow: none;
+      border-color: #86b7fe;
+    }
+    .nav-tabs .nav-link.active {
+      background-color: #198754;
+      color: white;
+      border: none;
+    }
+    .nav-tabs .nav-link {
+      border: none;
+      color: black;
+    }
+  </style>
+<body>
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card p-4">
+          <ul class="nav nav-tabs mb-4" id="authTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab">Login</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="signup-tab" data-bs-toggle="tab" data-bs-target="#signup" type="button" role="tab">Sign Up</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="authTabContent">
+            <!-- Login Form -->
+            <div class="tab-pane fade show active" id="login" role="tabpanel">
+              <form>
+                <div class="mb-3">
+                  <label for="loginEmail" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="loginEmail" placeholder="Enter email" name="user[email]">
+                </div>
+                <div class="mb-3">
+                  <label for="loginPassword" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="loginPassword" placeholder="Password" name="user[password]">
+                </div>
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-success">Login</button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Signup Form -->
+            <div class="tab-pane fade" id="signup" role="tabpanel">
+              <form method="post" action="/signUp">
+                <div class="mb-3">
+                  <label for="signupName" class="form-label">Full Name</label>
+                  <input type="text" class="form-control" id="signupName" placeholder="Your name" name="user[name]">
+                </div>
+                <div class="mb-3">
+                  <label for="signupEmail" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="signupEmail" placeholder="Enter email" name="user[email]">
+                </div>
+                <div class="mb-3">
+                  <label for="signupPassword" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="signupPassword" placeholder="Password" name="user[password]">
+                </div>
+                <div class="mb-3">
+                  <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
+                  <input type="password" class="form-control" id="signupConfirmPassword" placeholder="Confirm password" name="user[confirmPassword]">
+                </div>
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-success">Sign Up</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
